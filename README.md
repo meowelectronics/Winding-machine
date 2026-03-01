@@ -47,6 +47,15 @@ A PlatformIO-based firmware for an ESP32-driven automatic coil winding machine w
 
 ### User Interface
 
+#### 📊 Visual Guide
+For complete menu layouts, screen flows, and visual diagrams, see [**UI_GUIDE.md**](UI_GUIDE.md) which includes:
+- Full menu navigation flowchart
+- Screen layout mockups (320×240px display)
+- Motor parameters tuning interface
+- Winding progress visualization
+- Hardware block diagram
+- State machine diagram
+
 #### Main Screen
 - Quick access buttons for winding, manual mode, and settings
 - Current coil plan summary
@@ -84,6 +93,27 @@ Where:
 - μ₀ = 4π × 10⁻⁷ H/m
 
 Supports core materials via permeability (μᵣ) adjustment.
+
+## Menu Structure at a Glance
+
+```
+MAIN MENU
+├─ WINDING (Auto)
+│  ├─ Coil Configuration (wire, width, radius, target)
+│  └─ Winding Progress (turn/layer counters, progress bar, PAUSE/STOP)
+├─ MANUAL WINDING
+│  └─ FWD/REV buttons (discrete synchronized stepping)
+├─ HOMING
+│  └─ HOME A / HOME B (auto-homing with backoff)
+└─ SETTINGS (2×2 Grid)
+   ├─ TOUCH CAL
+   ├─ MOTOR PARAMS (7 tunable parameters)
+   ├─ UNITS (mH ↔ uH toggle)
+   ├─ SENSORS (ON/OFF endstop safety)
+   └─ DIAM CAL (ON/OFF diameter-aware mode)
+```
+
+**→ See [UI_GUIDE.md](UI_GUIDE.md) for detailed screen layouts and visual diagrams**
 
 ## Technical Highlights
 
